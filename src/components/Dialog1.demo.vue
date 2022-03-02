@@ -1,0 +1,37 @@
+<demo>
+  常规使用
+</demo>
+
+<template>
+  <div>
+    <Button @click="toggle">打开对话框</Button>
+    <Dialog v-model:visible="x" :closeOnClickOverlay="false" :ok="f1" :cancel="f2">
+      <template v-slot:content>
+        <strong>h1</strong>
+        <div>hi2</div>
+      </template>
+      <template v-slot:title>
+        <strong>加粗的标题</strong>
+      </template>
+    </Dialog>
+  </div>
+</template>
+
+<script lang='ts' setup>
+import { Button, Dialog } from '../lib/index'
+import { ref } from 'vue'
+import { openDialog } from '../lib/openDialog'
+
+const x = ref(false)
+const toggle = () => {
+  x.value = !x.value
+}
+const f1 = () => {
+  return false
+}
+const f2 = () => { }
+
+</script>
+
+<style lang='scss' scoped>
+</style>

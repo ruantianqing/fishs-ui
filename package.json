@@ -1,0 +1,32 @@
+{
+  "name": "fish-ui",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@vue/compiler-sfc": "^3.2.30",
+    "fs": "0.0.1-security",
+    "fs-extra": "^10.0.0",
+    "github-markdown-css": "^5.1.0",
+    "hyperdown": "^2.4.29",
+    "marked": "^4.0.12",
+    "path": "^0.12.7",
+    "prismjs": "^1.26.0",
+    "sass": "^1.49.7",
+    "vite-plugin-components": "^0.13.3",
+    "vite-plugin-markdown": "^2.0.2",
+    "vue": "^3.2.25",
+    "vue-router": "^4.0.12"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^2.2.0",
+    "typescript": "^4.5.4",
+    "vite": "^2.8.0",
+    "vite-plugin-md2vue": "^1.1.1",
+    "vue-tsc": "^0.29.8"
+  }
+}
