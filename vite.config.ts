@@ -4,7 +4,6 @@ import ViteComponents, { AntDesignVueResolver } from 'vite-plugin-components';
 import markdownLoader from './plugins/md'
 const path = require('path')
 
-// import path from "path";
 import fs from "fs";
 import { baseParse } from "@vue/compiler-core";
 
