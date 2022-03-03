@@ -74,7 +74,7 @@ const select = (title: string) => {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 $blue: #40a9ff;
 $color: #333;
 $border-color: #d9d9d9;
