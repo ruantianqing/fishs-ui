@@ -1,5 +1,5 @@
 <template>
-  <button class="gulu-button" :class="classes" :disabled="disabled">
+  <button class="gulu-button" :class="classes" :disabled="disabled" :round="round">
     <span v-if="loading" class="gulu-loadingIndicator"></span>
     <slot />
   </button>
@@ -26,6 +26,10 @@ const props = defineProps({
     default: false,
   },
   loading: {
+    type: Boolean,
+    default: false
+  },
+  round: {
     type: Boolean,
     default: false
   }
@@ -153,6 +157,9 @@ $grey: grey;
     }
   }
   &.gulu-theme-button {
+    &[round=true] {
+      border-radius: 20px;
+    }
     &[disabled] {
       cursor: not-allowed;
       color: $grey;

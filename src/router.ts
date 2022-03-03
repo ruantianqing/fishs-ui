@@ -6,6 +6,7 @@ import SwitchDemo from "./components/SwitchDemo.vue";
 import ButtonDemo from "./components/ButtonDemo.vue"
 import DialogDemoVue from "./components/DialogDemo.vue";
 import TabsDemo from './components/TabsDemo.vue'
+import CheckBoxDemo from './components/CheckBoxDemo.vue'
 
 
 import { h } from 'vue'
@@ -35,7 +36,8 @@ export const router = createRouter({
         { path: "switch", component: SwitchDemo },
         { path: "button", component: ButtonDemo },
         { path: "dialog", component: DialogDemoVue },
-        { path: "tabs", component: TabsDemo }
+        { path: "tabs", component: TabsDemo },
+        { path: "checkbox", component: CheckBoxDemo }
 
 
       ]
