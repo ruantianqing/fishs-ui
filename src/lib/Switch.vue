@@ -1,5 +1,5 @@
 <template>
-  <button class="gulu-switch" @click="toggle" :class="{ 'gulu-checked': value }">
+  <button class="fishs-switch" @click="toggle" :class="{ 'fishs-checked': value }">
     <span></span>
   </button>
 </template>
@@ -22,7 +22,7 @@ const toggle = () => {
 <style lang="scss">
 $h: 22px;
 $h2: $h - 4px;
-.gulu-switch {
+.fishs-switch {
   height: $h;
   width: $h * 2;
   border: none;
@@ -39,7 +39,7 @@ $h2: $h - 4px;
     border-radius: calc($h2 / 2);
     transition: all 250ms;
   }
-  &.gulu-checked {
+  &.fishs-checked {
     background: #1890ff;
     > span {
       left: calc(100% - #{$h2} - 2px);
@@ -53,7 +53,7 @@ $h2: $h - 4px;
       width: $h2 + 4px;
     }
   }
-  &.gulu-checked:active {
+  &.fishs-checked:active {
     > span {
       width: $h2 + 4px;
       margin-left: -4px;

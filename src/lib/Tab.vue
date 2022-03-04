@@ -5,6 +5,6 @@
 </template>
 
 <script lang="ts" setup>
-name: 'GuluTab'
+name: 'fishsTab'
 
 </script>
