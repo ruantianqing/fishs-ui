@@ -5,5 +5,6 @@ export { default as Tab } from './Tab.vue'
 export { default as Tabs } from './Tabs.vue'
 export { default as Checkbox } from './Checkbox.vue'
 export { default as Input } from './Input.vue'
+export { default as InputNumber } from './InputNumber.vue'
 
 export { openDialog as openDialog } from './openDialog'
