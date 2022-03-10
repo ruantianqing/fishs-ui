@@ -1,12 +1,12 @@
 <template>
-<p @click="change">
+<p>
   <input type="checkbox" id="cbox1" v-model="check" :checked="check" :value="label">
-  <label for="cbox1">{{label}}</label>
+  <label style="margin-left: 5px;" :class="check ? 'actived' : ''" for="cbox1">{{label}}</label>
 </p>
 </template>
 
 <script setup lang='ts'>
-import { nextTick, ref } from 'vue';
+import { nextTick, ref, watchEffect } from 'vue';
 
 
 const props = defineProps({
@@ -17,19 +17,22 @@ const props = defineProps({
     type: Boolean  
   }
 })
-console.log(props.check)
 
 const emit = defineEmits(['update:check'])
 
-const change = () => {
-  nextTick(() => {
+watchEffect(() => {
     emit('update:check', props.check)
-  })
-}
+})
+
 
 
 </script>
 
 <style lang='scss' scoped>
+$blue: #40a9ff;
+
+.actived {
+  color: $blue;
+}
 
 </style>
