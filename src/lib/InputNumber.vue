@@ -10,7 +10,7 @@
 </template>
 
 <script setup lang='ts'>
-import { watch } from 'vue';
+import { nextTick, watch } from 'vue';
 
 const props = defineProps({
   modelValue: {
@@ -34,21 +34,27 @@ const emit = defineEmits(['update:modelValue', 'change'])
 const increase = () => {
   if (props.modelValue < props.max) {
     emit('update:modelValue', +props.modelValue + 1)
+
   }
 }
 
 const decrease = () => {
   if (props.modelValue > props.min) {
     emit('update:modelValue', +props.modelValue - 1)
+
   }
 }
 
 let timeBar = null
 const increaseMouseDown = () => {
-  timeBar = setInterval(increase, 100)
+  nextTick(() => {
+    timeBar = setInterval(increase, 200)
+  })
 }
 const decreaseMouseDown = () => {
-  timeBar = setInterval(decrease, 100)
+  nextTick(() => {
+    timeBar = setInterval(decrease, 200)
+  })
 }
 
 const clearTimeBar = () => {
