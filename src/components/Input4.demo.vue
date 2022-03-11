@@ -3,11 +3,11 @@
 </demo>
 
 <template>
-  <Input v-model:value="value" placeholder="Please input" size="large"></Input>
+  <Input v-model="value" placeholder="Please input" size="large"></Input>
   <br/>
-  <Input v-model:value="value" placeholder="Please input" size="default"></Input>
+  <Input v-model="value" placeholder="Please input" size="default"></Input>
   <br/>
-  <Input v-model:value="value" placeholder="Please input" size="small"></Input>
+  <Input v-model="value" placeholder="Please input" size="small"></Input>
 </template>
 
 <script setup lang='ts'>

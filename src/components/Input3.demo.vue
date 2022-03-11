@@ -3,7 +3,7 @@
 </demo>
 
 <template>
-  <Input v-model:value="value" placeholder="Please input" clearable></Input>
+  <Input v-model="value" placeholder="Please input" clearable></Input>
 </template>
 
 <script setup lang='ts'>

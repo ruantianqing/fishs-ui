@@ -5,13 +5,13 @@
       :class="classes"
       :type="type"
       :placeholder="placeholder"
-      :value="value"
+      :value="modelValue"
       :disabled="disabled"
       :maxlength='maxlength'
       @input="updateValue"
     />
-    <div v-if="clearable && value" @click="clearInput" class="clear">×</div>
-    <div v-if="maxlength" class="max-length">{{ value.length + ' / ' + maxlength }}</div>
+    <div v-if="clearable && modelValue" @click="clearInput" class="clear">×</div>
+    <div v-if="maxlength" class="max-length">{{ String(modelValue).length + ' / ' + maxlength }}</div>
   </div>
 </template>
 
@@ -19,7 +19,7 @@
 
 
 const props = defineProps({
-  value: {
+  modelValue: {
     type: String
   },
   placeholder: {
@@ -52,14 +52,14 @@ const classes = computed(() => {
   }
 })
 
-const emit = defineEmits(['update:value'])
+const emit = defineEmits(['update:modelValue'])
 
 const updateValue = (e) => {
-  emit('update:value', e.target.value)
+  emit('update:modelValue', e.target.value)
 }
 
 const clearInput = () => {
-  emit('update:value', '')
+  emit('update:modelValue', '')
 }
 
 
@@ -109,10 +109,10 @@ $blue: #40a9ff;
     cursor: pointer;
   }
   .max-length {
-    width: 40px;
+    width: 45px;
     font-size: 10px;
     color: #999;
-    transform: translate(-38px, 8px);
+    transform: translate(-45px, 8px);
   }
 }
 </style>

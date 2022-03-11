@@ -3,14 +3,15 @@
 </demo>
 
 <template>
-  <Input v-model:value="value" placeholder="Please input"></Input>
+  <Input v-model="value" placeholder="Please input"></Input>
 </template>
 
 <script setup lang='ts'>
-import { ref } from 'vue';
+import { ref, watch } from 'vue';
 import { Input } from '../lib/index'
 
 const value = ref('')
+
 
 </script>
 
