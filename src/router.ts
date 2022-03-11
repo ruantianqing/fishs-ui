@@ -9,6 +9,7 @@ import TabsDemo from './components/TabsDemo.vue'
 import CheckBoxDemo from './components/CheckBoxDemo.vue'
 import InputDemoVue from "./components/InputDemo.vue";
 import InputNumberDemoVue from "./components/InputNumberDemo.vue";
+import SelectDemo from './components/SelectDemo.vue'
 
 
 import { h } from 'vue'
@@ -41,7 +42,8 @@ export const router = createRouter({
         { path: "tabs", component: TabsDemo },
         { path: "checkbox", component: CheckBoxDemo },
         { path: "input", component: InputDemoVue },
-        { path: "inputNumber", component: InputNumberDemoVue }
+        { path: "inputNumber", component: InputNumberDemoVue },
+        { path: "select", component: SelectDemo }
 
 
       ]

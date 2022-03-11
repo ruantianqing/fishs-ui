@@ -6,11 +6,11 @@
   <div>
     <InputNumber v-model="num" size="large" @change="handleChange"></InputNumber>
 
-    <br>
+    <br/>
 
     <InputNumber v-model="num" @change="handleChange"></InputNumber>
 
-    <br>
+    <br/>
 
     <InputNumber v-model="num" size="small" @change="handleChange"></InputNumber>
   </div>
