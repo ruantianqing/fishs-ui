@@ -36,7 +36,7 @@
           <router-link to="/doc/input">Input 组件</router-link>
         </li>
         <li>
-          <router-link to="/doc/inputNumber">InputNumber 组件</router-link>
+          <router-link to="/doc/inputNumber">InputNumber组件</router-link>
         </li>
         <li>
           <router-link to="/doc/select">Select 组件</router-link>
@@ -98,7 +98,7 @@ $aside-index : 10;
 
 aside {
   background: lightblue;
-  width: 150px;
+  width: 160px;
   padding: 16px 0;
   position: fixed;
   top: 0;
