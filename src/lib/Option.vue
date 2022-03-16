@@ -1,8 +1,10 @@
 <template>
-  <div class="option-item" @click="selectOption">{{ label }}</div>
+  <div class="option-item" :class="computedClass" @click="selectOption">{{ label }}</div>
 </template>
 
-<script setup lang='ts'>
+<script setup lang='ts'>import { computed } from 'vue';
+
+
 
 const props = defineProps({
   label: {
@@ -10,14 +12,31 @@ const props = defineProps({
   },
   value: {
     type: String
+  },
+  emitFunc: {
+    type: Function
+  },
+  disabled: {
+    type: Boolean,
+    default: false
   }
 })
 
-const emit = defineEmits(['update-option'])
+console.log(props.disabled)
+
 
 const selectOption = () => {
-  emit('update-option', [props.label, props.value])
+  if (props.disabled) {
+    return
+  }
+  props.emitFunc([props.label, props.value])
 }
+
+const computedClass = computed(() => {
+  return {
+    'option-item-disabled': props.disabled
+  }
+})
 
 
 </script>
@@ -34,6 +53,10 @@ $blue: #40a9ff;
   &:hover {
     color: $blue;
     background-color: #eee;
+  }
+  &-disabled {
+    color: #ccc;
+    cursor: not-allowed;
   }
 }
 </style>

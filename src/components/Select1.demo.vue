@@ -3,8 +3,20 @@
 </demo>
 
 <template>
-  <Select v-model="value" placeholder="Select">
-    <Option v-for="item in options" :key="item.value" :label="item.label" :value="item.value"></Option>
+  <Select v-slot="slotProps" :options="options" v-model="value" placeholder="Select" size="large">
+    <Option :emitFunc="slotProps.emitFunc" v-for="item in options" :key="item.value" :label="item.label" :value="item.value"></Option>
+  </Select>
+
+  <br />
+
+  <Select v-slot="slotProps" :options="options" v-model="value" placeholder="Select" size="normal">
+    <Option :emitFunc="slotProps.emitFunc" v-for="item in options" :key="item.value" :label="item.label" :value="item.value"></Option>
+  </Select>
+
+  <br />
+
+  <Select v-slot="slotProps" :options="options" v-model="value" placeholder="Select" size="small">
+    <Option :emitFunc="slotProps.emitFunc" v-for="item in options" :key="item.value" :label="item.label" :value="item.value"></Option>
   </Select>
 </template>
 
@@ -18,29 +30,26 @@ watch(value, newValue => {
   console.log(newValue)
 })
 
-const test = (label: string, value: string) => {
-  console.log(label, value)
-}
 
 const options = [
   {
-    value: 'Option1',
+    value: '1',
     label: 'Option1',
   },
   {
-    value: 'Option2',
+    value: '2',
     label: 'Option2',
   },
   {
-    value: 'Option3',
+    value: '3',
     label: 'Option3',
   },
   {
-    value: 'Option4',
+    value: '4',
     label: 'Option4',
   },
   {
-    value: 'Option5',
+    value: '5',
     label: 'Option5',
   },
 ]
