@@ -11,6 +11,7 @@ import InputDemoVue from "./components/InputDemo.vue";
 import InputNumberDemoVue from "./components/InputNumberDemo.vue";
 import SelectDemo from './components/SelectDemo.vue'
 import LayoutDemo from "./components/LayoutDemo.vue";
+import CarouselDemo from "./components/CarouselDemo.vue";
 
 
 import { h } from 'vue'
@@ -46,6 +47,7 @@ export const router = createRouter({
         { path: "inputNumber", component: InputNumberDemoVue },
         { path: "select", component: SelectDemo },
         { path: "layout", component: LayoutDemo },
+        { path: "carouse", component: CarouselDemo },
 
 
       ]

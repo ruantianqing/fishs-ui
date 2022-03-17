@@ -10,5 +10,7 @@ export { default as Select } from './Select.vue'
 export { default as Option } from './Option.vue'
 export { default as Row} from './Row.vue'
 export { default as Col} from './Col.vue'
+export { default as Carousel} from './Carousel.vue'
+export { default as CarouselItem} from './CarouselItem.vue'
 
 export { openDialog as openDialog } from './openDialog'
