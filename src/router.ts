@@ -10,6 +10,7 @@ import CheckBoxDemo from './components/CheckBoxDemo.vue'
 import InputDemoVue from "./components/InputDemo.vue";
 import InputNumberDemoVue from "./components/InputNumberDemo.vue";
 import SelectDemo from './components/SelectDemo.vue'
+import LayoutDemo from "./components/LayoutDemo.vue";
 
 
 import { h } from 'vue'
@@ -43,7 +44,8 @@ export const router = createRouter({
         { path: "checkbox", component: CheckBoxDemo },
         { path: "input", component: InputDemoVue },
         { path: "inputNumber", component: InputNumberDemoVue },
-        { path: "select", component: SelectDemo }
+        { path: "select", component: SelectDemo },
+        { path: "layout", component: LayoutDemo },
 
 
       ]

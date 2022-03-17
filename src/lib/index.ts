@@ -8,5 +8,7 @@ export { default as Input } from './Input.vue'
 export { default as InputNumber } from './InputNumber.vue'
 export { default as Select } from './Select.vue'
 export { default as Option } from './Option.vue'
+export { default as Row} from './Row.vue'
+export { default as Col} from './Col.vue'
 
 export { openDialog as openDialog } from './openDialog'
