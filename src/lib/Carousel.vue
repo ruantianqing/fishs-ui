@@ -3,10 +3,12 @@
     <div class="fishs-window" ref="carousel">
       <slot></slot>
     </div>
-    <div class="arrows">
-      <span class="arrows-left" @click="pre">&lt;</span>
-      <span class="arrows-right" @click="next">&gt;</span>
-    </div>
+    <Transition name="fade">
+      <div class="arrows" v-show="showArrows">
+        <span class="arrows-left" @click="pre">&lt;</span>
+        <span class="arrows-right" @click="next">&gt;</span>
+      </div>
+    </Transition>
     <div class="dots">
       <span
         v-for="(child, index) in children"
@@ -20,7 +22,6 @@
 
 <script setup lang='ts'>
 import { onMounted, ref } from 'vue';
-
 
 const props = defineProps({
   height: {
@@ -41,6 +42,7 @@ const children = ref(null)
 const currentIndex = ref(0)
 const timeBar = ref(null)
 const canClick = ref(true)
+const showArrows = ref(false)
 
 
 onMounted(() => {
@@ -90,11 +92,13 @@ const autoPlay = () => {
 
 // 鼠标悬停
 const mouseEnter = () => {
+  showArrows.value = true
   window.clearInterval(timeBar.value)
 }
 
 // 鼠标离开开始自动播放
 const mouseLeave = () => {
+  showArrows.value = false
   autoPlay()
 }
 
@@ -151,6 +155,7 @@ const resetZIndex = () => {
 
 <style lang='scss' scoped>
 .fishs-carousel {
+  position: relative;
   width: v-bind(width);
   .fishs-window {
     position: relative;
@@ -163,7 +168,7 @@ const resetZIndex = () => {
     position: absolute;
     z-index: 100;
     top: 50%;
-    transform: translateY(220%);
+    transform: translateY(-50%);
     display: flex;
     justify-content: space-between;
     width: v-bind(width);
@@ -199,7 +204,7 @@ const resetZIndex = () => {
     z-index: 100;
     bottom: 0;
     left: 50%;
-    transform: translateX(-105%);
+    transform: translate(-53%, -10px);
     display: flex;
     justify-content: center;
     width: v-bind(width);
@@ -210,11 +215,23 @@ const resetZIndex = () => {
       background-color: #fff;
       margin-right: 5px;
       cursor: pointer;
+      &:hover {
+        background-color: #ccc;
+      }
     }
     .active {
       background-color: #ccc;
     }
   }
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity .8s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }
 
 </style>
