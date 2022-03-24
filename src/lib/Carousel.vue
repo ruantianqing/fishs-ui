@@ -40,17 +40,19 @@ const carousel = ref(null)
 const children = ref(null)
 const currentIndex = ref(0)
 const timeBar = ref(null)
+const canClick = ref(true)
 
 
 onMounted(() => {
   children.value = carousel.value.children
-
   children.value[currentIndex.value].style.zIndex = 10
-
   autoPlay()
 })
 
+// 上一张
 const pre = () => {
+  if (!canClick.value) return
+  canClick.value = false
   const saveCurrentIndex = currentIndex.value
   currentIndex.value = currentIndex.value - 1 < 0 ? children.value.length - 1 : currentIndex.value - 1
   resetZIndex()
@@ -58,7 +60,10 @@ const pre = () => {
   addAnimation(saveCurrentIndex, currentIndex.value, 1)
 }
 
+// 下一张
 const next = () => {
+  if (!canClick.value) return
+  canClick.value = false
   const saveCurrentIndex = currentIndex.value
   currentIndex.value = currentIndex.value + 1 > children.value.length - 1 ? 0 : currentIndex.value + 1
   resetZIndex()
@@ -66,7 +71,7 @@ const next = () => {
   addAnimation(saveCurrentIndex, currentIndex.value, -1)
 }
 
-
+// 点击小圆点
 const jump = (index) => {
   if (index === currentIndex.value) return
   const current = currentIndex.value
@@ -75,6 +80,7 @@ const jump = (index) => {
   addAnimation(current, index, direction)
 }
 
+// 自动播放
 const autoPlay = () => {
   if (timeBar.value) window.clearInterval(timeBar.value)
   timeBar.value = window.setInterval(() => {
@@ -129,9 +135,10 @@ const onFinish = () => {
       children.value[i].style.transform = `translateX(0)`
     }
   }
+  canClick.value = true
 }
 
-
+// 重置z-index
 const resetZIndex = () => {
   for (let i = 0; i < children.value.length; i++) {
     children.value[i].style.zIndex = 0
@@ -202,6 +209,7 @@ const resetZIndex = () => {
       border-radius: 50%;
       background-color: #fff;
       margin-right: 5px;
+      cursor: pointer;
     }
     .active {
       background-color: #ccc;
