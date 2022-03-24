@@ -23,7 +23,6 @@ const props = defineProps({
   }
 })
 
-console.log(props.disabled)
 
 
 const selectOption = () => {
