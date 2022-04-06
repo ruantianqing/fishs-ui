@@ -4,7 +4,7 @@
 
 <template>
   <div>
-    <Checkbox v-model:check="checked" label="test"></Checkbox>
+    <Checkbox v-model="checked" label="test"></Checkbox>
   </div>
 </template>
 

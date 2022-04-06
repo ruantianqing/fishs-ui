@@ -1,7 +1,7 @@
 <template>
 <p>
-  <input type="checkbox" id="cbox1" v-model="check" :checked="check" :value="label">
-  <label style="margin-left: 5px;" :class="check ? 'actived' : ''" for="cbox1">{{label}}</label>
+  <input type="checkbox" id="cbox1" v-model="modelValue" :checked="modelValue" :value="label">
+  <label style="margin-left: 5px;" :class="modelValue ? 'actived' : ''" for="cbox1">{{label}}</label>
 </p>
 </template>
 
@@ -13,7 +13,7 @@ const props = defineProps({
   label: {
     type: String
   },
-  check: {
+  modelValue: {
     type: Boolean  
   }
 })
@@ -21,7 +21,7 @@ const props = defineProps({
 const emit = defineEmits(['update:check'])
 
 watchEffect(() => {
-    emit('update:check', props.check)
+    emit('update:check', props.modelValue)
 })
 
 
