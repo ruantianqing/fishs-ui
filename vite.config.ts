@@ -33,6 +33,7 @@ const vitePluginVue = {
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: '/fishs-ui/',
   plugins: [markdownLoader(), vue(), ViteComponents({
     customComponentResolvers: [AntDesignVueResolver()],
   }), vitePluginVue],
